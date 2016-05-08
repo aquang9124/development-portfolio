@@ -19,8 +19,14 @@ nav {
   nav > ul {
     list-style-type: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    position: absolute; }
     nav > ul > li {
-      display: inline-block; }
+      display: inline-block;
+      float: left; }
       nav > ul > li > a {
-        display: block; }
+        display: block;
+        padding: 1em 0;
+        min-width: 140px;
+        height: 50px;
+        text-align: center; }
