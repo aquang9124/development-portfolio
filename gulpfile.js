@@ -1,13 +1,20 @@
 var gulp = require('gulp');
 
 // Include plugins
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
+var sass = require('gulp-sass'),
+	concat = require('gulp-concat'),
+	neat = require('node-neat').includePaths;
+
+var paths = {
+    scss: './client/content/scss/*.scss'
+};
 
 // Compile SASS
 gulp.task('sass', function() {
-	return gulp.src('./client/content/scss/*.scss')
-		.pipe(sass())
+	return gulp.src(paths.scss)
+		.pipe(sass({
+			includePaths: ['sass'].concat(neat)
+		}))
 		.pipe(gulp.dest('./client/content/css'));
 });
 
