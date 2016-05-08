@@ -13,11 +13,11 @@
 	<link rel="stylesheet" href="/content/css/styles.css">
 </head>
 <body>
-	<nav>
+	<nav ng-controller="navCtrl">
 		<ul>
-			<li>Home</li>
-			<li>The Counted</li>
-			<li>Fun</li>
+			<li ng-class="vm.currentUrl('/') ? active : inactive"><a href="#/">Home</a></li>
+			<li ng-class="vm.currentUrl('/counted') ? active : inactive"><a href="#/counted">The Counted</a></li>
+			<li ng-class="vm.currentUrl('/fun') ? active : inactive"><a href="#/fun">Fun</a></li>
 		</ul>
 	</nav>
 	<main ng-view></main>

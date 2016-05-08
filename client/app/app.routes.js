@@ -3,7 +3,7 @@
 		.module('portfolioApp')
 		.config(routes);
 
-	function routes($routeProvider) {
+	function routes($routeProvider, $compileProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'partials/home.html',
@@ -13,6 +13,8 @@
 			.otherwise({
 				redirectTo: '/'
 			});
+
+		$compileProvider.debugInfoEnabled(false);
 	}
 
 } )(angular);
