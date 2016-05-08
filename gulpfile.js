@@ -20,14 +20,14 @@ gulp.task('sass', function() {
 
 // Concatenate JS Files
 gulp.task('scripts', function() {
-	return gulp.src(['./client/app/app.module.js', './client/app/*.js'])
+	return gulp.src(['./client/app/app.module.js', './client/app/*.js', './client/app/navigation/*.js', './client/app/homepage/*.js'])
 		.pipe(concat('all.js'))
-		.pipe(gulp.dest('./client/app'));
+		.pipe(gulp.dest('./client/public'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-	gulp.watch('./client/app/*.js', ['scripts']);
+	gulp.watch(['./client/app/*.js', './client/app/navigation/*.js', './client/app/homepage/*.js'], ['scripts']);
 	gulp.watch('./client/content/scss/*.scss', ['sass']);
 });
 

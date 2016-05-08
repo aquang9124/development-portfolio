@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="portfolioApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="/app/all.js"></script>
+	<script src="/public/all.js"></script>
 	<link rel="stylesheet" href="/content/css/styles.css">
 </head>
 <body>
-	
+	<nav>
+		<ul>
+			<li>Home</li>
+			<li>The Counted</li>
+			<li>Fun</li>
+		</ul>
+	</nav>
+	<main ng-view></main>
 </body>
 </html>
