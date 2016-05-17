@@ -12,7 +12,7 @@ html, body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 body {
-  font-size: 85.5%;
+  font-size: 100%;
   overflow: hidden; }
 
 nav {
@@ -73,7 +73,7 @@ main {
   height: 100%;
   width: 100%; }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 310px) and (max-width: 767px) {
   aside {
     display: none; }
   main {
@@ -88,7 +88,9 @@ main {
     float: none;
     background: rgba(0, 0, 0, 0.7); }
     nav > ul .active {
-      background: #255c1d; }
+      background: rgba(21, 51, 16, 0.9); }
+    nav > ul .inactive:hover {
+      background: rgba(0, 0, 0, 0.5); }
     nav > ul > li {
       display: none; }
     nav > ul li.mobile-navigation-btn {
@@ -117,4 +119,26 @@ main {
     height: 100%; }
     .content-wrapper header {
       height: 150px;
-      width: 100%; } }
+      width: 100%;
+      background: url("/content/img/htmlpic.jpg") center center no-repeat;
+      background-size: cover;
+      position: relative; }
+      .content-wrapper header h3 {
+        position: absolute;
+        margin: 0 auto;
+        color: white;
+        width: 80%;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        top: 35%;
+        left: 0;
+        right: 0;
+        font-size: 1.875em;
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.7); }
+        .content-wrapper header h3 hr {
+          width: 20%;
+          margin: 0 0 0.25em 0;
+          display: inline-block;
+          border-top: medium double white; } }
