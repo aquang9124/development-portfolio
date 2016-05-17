@@ -2,6 +2,8 @@
 @import "neat";
 
 // Global Stylings
+
+// Stylings for html, body
 html, body {
 	width: 100%;
 	height: 100%;
@@ -14,6 +16,7 @@ body {
 	font-size: 85.5%;
 }
 
+// Navigation menu stylings
 nav {
 	width: 100%;
 	height: 50px;
@@ -53,7 +56,7 @@ nav {
 				color: white;
 				font-size: 2em;
 
-				&:visited, &:hover, &:active {
+				&:visited, &:hover, &:link, &:active {
 					text-decoration: none;
 					color: white;
 				}
@@ -68,18 +71,41 @@ nav {
 	}
 }
 
+// Sidebar stylings
+aside {
+	width: 20%;
+	height: calc(100% - 50px);
+	background: #333;
+	display: inline-block;
+}
+
+// Main content stylings
+main {
+	display: inline-block;
+	height: calc(100% - 50px);
+	width: 80%;
+}
+
 // Class stylings
+
 .mobile-navigation-btn {
 	display: none;
 }
+
+.fixed-content-wrapper {
+	height: 100%;
+	width: 100%;
+}
+
 // Media Queries
 @media only screen and (min-width: 320px) and (max-width: 768px) {
+	// Remove the padding on the navigation bar
 	nav {
 		padding: 0;
 	}
+	// Stylings for the ul and everything inside of it
 	nav > ul {
 		width: 100%;
-
 		float: none;
 		background: #333;
 		
@@ -93,26 +119,31 @@ nav {
 			float: none;
 			> a {
 				display: block;
-				padding-top: 2%;
 				width: 100%;
 				> i {
-					display: block;
+					display: inline;
+					vertical-align: middle;
 				}
 			}
 		}
-	}
-	
-	li.mobile-display {
-		width: 100%;
-		display: block;
-		float: none;
-		height: auto;
 
-		> a {
+		li.open-menu {
+			background: darken(#333, 35%);
+		}
+
+		li.mobile-display {
+			width: 100%;
 			display: block;
+			float: none;
+			height: auto;
 
-			&:hover {
-				background: lighten(black, 15%);
+			> a {
+				display: block;
+
+				&:hover {
+					background: lighten(black, 15%);
+					text-decoration: none;
+				}
 			}
 		}
 	}

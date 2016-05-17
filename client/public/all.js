@@ -38,6 +38,7 @@
 		vm.currentUrl = currentUrl;
 		vm.showLinks = showLinks;
 		vm.mobileScreen = false;
+		vm.openMenu = false;
 
 		// Function implementations
 		function currentUrl(urlLocation) {
@@ -45,9 +46,11 @@
 		}
 
 		function showLinks() {
-			if (vm.mobileScreen === true) {
+			if (vm.mobileScreen === true && vm.openMenu === true) {
 				vm.mobileScreen = false;
+				vm.openMenu = false;
 			} else {
+				vm.openMenu = true;
 				vm.mobileScreen = true;
 			}
 		}
