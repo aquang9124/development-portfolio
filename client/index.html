@@ -14,13 +14,18 @@
 	<link rel="stylesheet" href="/content/css/styles.css">
 </head>
 <body>
-	<nav ng-controller="navCtrl as vm">
-		<ul>
-			<li title="Home" ng-class="vm.currentUrl('/') ? 'active' : 'inactive'"><a href="#/"><span class="fa fa-home fa-2x" aria-hidden="true"></span></a></li>
-			<li ng-class="vm.currentUrl('/counted') ? 'active' : 'inactive'"><a href="#/counted">Portfolio</a></li>
-			<li ng-class="vm.currentUrl('/fun') ? 'active' : 'inactive'"><a href="#/fun">Fun</a></li>
-		</ul>
-	</nav>
+	<section class="fixed-content-wrapper">
+		<nav ng-controller="navCtrl as vm">
+			<ul>
+				<li title="Home" ng-class="{ 'active' : vm.currentUrl('/'), 'inactive' : vm.currentUrl('/') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/"><span class="fa fa-home fa-2x" aria-hidden="true"></span></a></li>
+				<li ng-class="{ 'active' : vm.currentUrl('/gallery'), 'inactive' : vm.currentUrl('/gallery') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/gallery">Portfolio</a></li>
+				<li ng-class="{ 'active' : vm.currentUrl('/fun'), 'inactive' : vm.currentUrl('/fun') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/fun">Fun</a></li>
+				<li title="Navigation Menu" role="mobile-navigation"  class="mobile-navigation-btn">
+					<a href="#" ng-click="vm.showLinks()"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+				</li>
+			</ul>
+		</nav>
+	</section>
 	<main ng-view></main>
 </body>
 </html>

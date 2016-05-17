@@ -7,9 +7,16 @@
 		var vm = this;
 
 		vm.currentUrl = currentUrl;
+		vm.showLinks = showLinks;
+		vm.mobileScreen = false;
 
+		// Function implementations
 		function currentUrl(urlLocation) {
 			return urlLocation === $location.url();
+		}
+
+		function showLinks() {
+			vm.mobileScreen = true;
 		}
 	}
 

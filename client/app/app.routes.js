@@ -10,6 +10,11 @@
 				controller: 'homeCtrl',
 				controllerAs: 'vm'
 			})
+			.when('/gallery', {
+				templateUrl: 'partials/gallery.html',
+				controller: 'galleryCtrl',
+				controllerAs: 'vm'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
