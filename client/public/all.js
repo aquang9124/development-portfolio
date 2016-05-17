@@ -45,7 +45,11 @@
 		}
 
 		function showLinks() {
-			vm.mobileScreen = true;
+			if (vm.mobileScreen === true) {
+				vm.mobileScreen = false;
+			} else {
+				vm.mobileScreen = true;
+			}
 		}
 	}
 
