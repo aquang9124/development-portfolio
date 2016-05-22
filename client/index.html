@@ -17,14 +17,19 @@
 <body>
 	<section class="fixed-content-wrapper">
 		<nav ng-controller="navCtrl as vm" role="navigation">
-			<ul>
+			<ul id="navbar-brand">
+				<li>
+					<a href="#/">Alex Quang</a>
+				</li>
+			</ul>
+			<ul ng-class="{ 'on-portfolio' : vm.currentUrl('/gallery') }">
 				<li title="Navigation Menu" role="mobile-navigation"  class="mobile-navigation-btn" ng-class="{ 'open-menu' : vm.openMenu }">
 					<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu == false"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
 					<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
 				</li>
-				<li title="Home" ng-class="{ 'active' : vm.currentUrl('/'), 'inactive' : vm.currentUrl('/') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/"><span class="fa fa-home fa-2x" aria-hidden="true"></span></a></li>
 				<li ng-class="{ 'active' : vm.currentUrl('/gallery'), 'inactive' : vm.currentUrl('/gallery') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/gallery">Portfolio</a></li>
-				<li ng-class="{ 'active' : vm.currentUrl('/fun'), 'inactive' : vm.currentUrl('/fun') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/fun">Fun</a></li>
+				<li ng-class="{ 'active' : vm.currentUrl('/tech'), 'inactive' : vm.currentUrl('/tech') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/tech">Technology</a></li>
+				<li title="Contact Me" ng-class="{ 'active' : vm.currentUrl('/contact'), 'inactive' : vm.currentUrl('/contact') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/contact">Contact</a></li>
 			</ul>
 		</nav>
 		<main ng-view></main>

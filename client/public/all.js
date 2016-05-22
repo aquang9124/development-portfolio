@@ -19,6 +19,16 @@
 				controller: 'galleryCtrl',
 				controllerAs: 'vm'
 			})
+			.when('/tech', {
+				templateUrl: 'partials/tech.html',
+				controller: 'techCtrl',
+				controllerAs: 'vm'
+			})
+			.when('/contact', {
+				templateUrl: 'partials/contact.html',
+				controller: 'contactCtrl',
+				controllerAs: 'vm'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
