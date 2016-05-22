@@ -35,7 +35,7 @@ nav {
 		float: right;
 
 		.active {
-			background: darken(#333, 25%);
+			background: #9358FE;
 		}
 
 		.inactive {
@@ -72,19 +72,11 @@ nav {
 	}
 }
 
-// Sidebar stylings
-aside {
-	width: 20%;
-	height: calc(100% - 50px);
-	background: #333;
-	display: inline-block;
-}
-
 // Main content stylings
 main {
-	display: inline-block;
+	display: block;
 	height: calc(100% - 50px);
-	width: 80%;
+	width: 100%;
 	overflow: auto;
 }
 
@@ -99,33 +91,63 @@ main {
 	width: 100%;
 }
 
-// When the screen is not in mobile view, hide the mobile header.
+// When the screen is not in mobile view, header is not limited to 150px.
 .content-wrapper {
 	width: 100%;
 	height: 100%;
 
 	header {
-		display: none;
+		height: 30%;
+		width: 100%;
+		background: url('/content/img/htmlpic.jpg') center center no-repeat;
+		background-size: cover;
+		position: relative;
+		text-align: center;
 	}
-	// Hide mobile-aside-content when not in mobile view
-	.mobile-aside-content {
-		display: none;
+	
+	.main-content {
+		width: 100%;
+		height: 70%;
+		padding: em(40) 0;
+		background: #333;
+		color: white;
+		text-align: justify;
+
+		.social-icons-wrapper {
+			width: 70%;
+			margin: 0 auto;
+			
+			.social-links {
+				margin-right: em(10);
+			}
+
+		}
+
+		p {
+			width: 70%;
+			margin: em(10) auto;
+			color: #FC407B;
+
+			span {
+				color: #FE9720;
+			}
+		}
+
+		ul {
+			width: 70%;
+			padding-left: 18%;
+			color: #FCF1CC;
+		}
 	}
+
 }
 
 // Media Queries
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-	// Hide the sidebar
-	aside {
-		display: none;
-	}
-
-	// Make main take up the whole screen minus navigation
-	main {
-		display: block;
-		width: 100%;
-		height: calc(100% - 50px);
-		overflow: auto;
+	// Put background on body to account for varying heights of
+	// mobile devices breaking the styling.
+	body {
+		background: #333;
 	}
 
 	// Remove the padding on the navigation bar
@@ -139,7 +161,7 @@ main {
 		background: rgba(0, 0, 0, 0.7);
 
 		.active {
-			background: rgba(21, 51, 16, 0.9);
+			background: rgba(87, 96, 55, 0.9);
 		}
 
 		.inactive {
@@ -191,19 +213,15 @@ main {
 	
 	// Keeping this class simple. Note to self: SASS extends should improve reusability.
 	.content-wrapper {
-
-		.mobile-aside-content {
-			display: block;
-			width: 100%;
+		
+		.main-content {
 			height: 100%;
-			padding: em(40) 0;
-			background: #333;
-			color: white;
-			text-align: justify;
+			font-size: em(14);
 
 			.social-icons-wrapper {
 				width: 80%;
 				margin: 0 auto;
+				margin-bottom: em(10);
 				
 				.social-links {
 					margin-right: em(10);
@@ -213,44 +231,21 @@ main {
 
 			p {
 				width: 80%;
-				margin: em(20) auto;
-				font-size: em(14);
+				color: #FC407B;
+			}
+
+			ul {
+				width: 80%;
+				padding-left: 15%;
+				margin: em(10) 0;
+				color: #FCF1CC;
 			}
 
 		}
 		
 		// The header will be the exact height of the fully-expanded dropdown menu.
 		header {
-			display: block;
 			height: 150px;
-			width: 100%;
-			background: url('/content/img/seal.jpg') center center no-repeat;
-			background-size: cover;
-			position: relative;
-			text-align: center;
-			
-			// h3 will be vertically and horizontally centered
-			h3 {
-				position: absolute;
-				margin: 0 auto;
-				color: white;
-				width: 85%;
-				height: 50px;
-				line-height: 50px;
-				top: 35%;
-				left: 0;
-				right: 0;
-				font-size: em(23);
-				font-weight: bold;
-				background: rgba(0, 0, 0, 0.7);
-
-				hr {
-					width: 20%;
-					margin: 0 0 0.25em 0;
-					display: inline-block;
-					border-top: medium double white;
-				}
-			}
 		}
 	}
 }
