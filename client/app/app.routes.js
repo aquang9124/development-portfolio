@@ -3,30 +3,26 @@
 		.module('portfolioApp')
 		.config(routes);
 
-	function routes($routeProvider, $compileProvider) {
-		$routeProvider
-			.when('/', {
+	function routes($stateProvider, $urlRouterProvider, $compileProvider) {
+		$urlRouterProvider.otherwise('/');
+		$stateProvider
+			.state('home', {
+				url: '/',
 				templateUrl: 'partials/home.html',
 				controller: 'homeCtrl',
 				controllerAs: 'vm'
 			})
-			.when('/gallery', {
+			.state('portfolio', {
+				url: '/portfolio',
 				templateUrl: 'partials/gallery.html',
 				controller: 'galleryCtrl',
 				controllerAs: 'vm'
 			})
-			.when('/tech', {
+			.state('tech', {
+				url: '/tech',
 				templateUrl: 'partials/tech.html',
 				controller: 'techCtrl',
 				controllerAs: 'vm'
-			})
-			.when('/contact', {
-				templateUrl: 'partials/contact.html',
-				controller: 'contactCtrl',
-				controllerAs: 'vm'
-			})
-			.otherwise({
-				redirectTo: '/'
 			});
 
 		$compileProvider.debugInfoEnabled(false);

@@ -25,6 +25,7 @@ nav {
 	box-shadow: 3px 2px 4px -2px black;
 	border-bottom: 1px solid black;
 	position: relative;
+	padding: 0 em(25);
 	z-index: 999;
 	text-transform: uppercase;
 
@@ -104,6 +105,10 @@ main {
 
 // Class stylings
 
+.mobile-only {
+	display: none;
+}
+
 .mobile-navigation-btn {
 	display: none;
 }
@@ -113,7 +118,7 @@ main {
 	width: 100%;
 }
 
-// When the screen is not in mobile view, header is not limited to 150px.
+// When the screen is not in mobile view, header is not limited.
 .content-wrapper {
 	width: 100%;
 	height: 100%;
@@ -126,7 +131,7 @@ main {
 		      rgba(0, 0, 0, 0.65), 
 		      rgba(0, 0, 0, 0.65)
 		    ),
-			url('/content/img/htmlpic.jpg') fixed center center no-repeat;
+			url('/content/img/htmlpic.jpg') center center no-repeat;
 		background-size: cover;
 		position: relative;
 		text-align: center;
@@ -150,16 +155,19 @@ main {
 
 			.intro-heading {
 				font-size: em(30);
-				width: 80%;
+				width: 70%;
 				margin: 0 auto;
 				opacity: 0.8;
 			}
 		}
 	}
 	
+	// Main content takes up 100% of screen
+	// When you scroll down the header completely
+	// disappears. It's kinda cool
 	.main-content {
 		width: 100%;
-		height: 70%;
+		height: 100%;
 		padding: em(40) 0;
 		background: #333;
 		color: white;
@@ -181,9 +189,6 @@ main {
 			margin: em(10) auto;
 			color: #FC407B;
 
-			span {
-				color: #FE9720;
-			}
 		}
 
 		ul {
@@ -191,8 +196,23 @@ main {
 			padding-left: 18%;
 			color: #FCF1CC;
 		}
+
+		h2 {
+			width: 70%;
+			margin: 0 auto;
+			margin-bottom: em(20);
+		}
 	}
 
+}
+
+// footer stylings
+footer {
+	position: relative;
+	clear: both;
+	width: 100%;
+	height: 100%;
+	color: white;
 }
 
 // Media Queries
@@ -200,12 +220,17 @@ main {
 	// Put background on body to account for varying heights of
 	// mobile devices breaking the styling.
 	body {
+		font-size: em(14);
 		background: #333;
 	}
 
 	// Remove the padding on the navigation bar
 	nav {
 		padding: 0;
+
+		#navbar-brand {
+			display: none;
+		}
 	}
 	// Stylings for the ul and everything inside of it
 	nav > ul {
@@ -294,11 +319,31 @@ main {
 
 		}
 		
-		// The header will be the exact height of the fully-expanded dropdown menu.
+		// The header will be double the height of the fully-expanded dropdown menu.
 		header {
-			height: 150px;
+			height: 300px;
 			background-position: center center;
 			background-attachment: initial;
+
+			.header-content {
+
+				.title-heading {
+					font-size: em(30);
+					text-transform: uppercase;
+					width: 80%;
+					margin: 0 auto;
+					margin-bottom: em(5);
+					font-weight: 700;
+					opacity: 0.8;
+				}
+
+				.intro-heading {
+					font-size: em(15);
+					width: 70%;
+					margin: 0 auto;
+					opacity: 0.8;
+				}
+			}
 		}
 	}
 }

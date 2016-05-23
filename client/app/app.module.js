@@ -1,4 +1,4 @@
 ( function(angular) {
 	angular
-		.module('portfolioApp', ['ngRoute', 'ngAnimate']);
+		.module('portfolioApp', ['ui.router', 'ngAnimate']);
 } )(angular);

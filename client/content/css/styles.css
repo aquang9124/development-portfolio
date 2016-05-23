@@ -17,6 +17,7 @@ nav {
   box-shadow: 3px 2px 4px -2px black;
   border-bottom: 1px solid black;
   position: relative;
+  padding: 0 1.5625em;
   z-index: 999;
   text-transform: uppercase; }
   nav > ul {
@@ -69,6 +70,9 @@ main {
   width: 100%;
   overflow: auto; }
 
+.mobile-only {
+  display: none; }
+
 .mobile-navigation-btn {
   display: none; }
 
@@ -82,7 +86,7 @@ main {
   .content-wrapper header {
     height: 100%;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/content/img/htmlpic.jpg") fixed center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/content/img/htmlpic.jpg") center center no-repeat;
     background-size: cover;
     position: relative;
     text-align: center; }
@@ -102,12 +106,12 @@ main {
         opacity: 0.8; }
       .content-wrapper header .header-content .intro-heading {
         font-size: 1.875em;
-        width: 80%;
+        width: 70%;
         margin: 0 auto;
         opacity: 0.8; }
   .content-wrapper .main-content {
     width: 100%;
-    height: 70%;
+    height: 100%;
     padding: 2.5em 0;
     background: #333;
     color: white;
@@ -122,18 +126,30 @@ main {
       width: 70%;
       margin: 0.625em auto;
       color: #FC407B; }
-      .content-wrapper .main-content p span {
-        color: #FE9720; }
     .content-wrapper .main-content ul {
       width: 70%;
       padding-left: 18%;
       color: #FCF1CC; }
+    .content-wrapper .main-content h2 {
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 1.25em; }
+
+footer {
+  position: relative;
+  clear: both;
+  width: 100%;
+  height: 100%;
+  color: white; }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   body {
+    font-size: 0.875em;
     background: #333; }
   nav {
     padding: 0; }
+    nav #navbar-brand {
+      display: none; }
   nav > ul {
     width: 100%;
     float: none;
@@ -181,6 +197,19 @@ main {
       margin: 0.625em 0;
       color: #FCF1CC; }
   .content-wrapper header {
-    height: 150px;
+    height: 300px;
     background-position: center center;
-    background-attachment: initial; } }
+    background-attachment: initial; }
+    .content-wrapper header .header-content .title-heading {
+      font-size: 1.875em;
+      text-transform: uppercase;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 0.3125em;
+      font-weight: 700;
+      opacity: 0.8; }
+    .content-wrapper header .header-content .intro-heading {
+      font-size: 0.9375em;
+      width: 70%;
+      margin: 0 auto;
+      opacity: 0.8; } }

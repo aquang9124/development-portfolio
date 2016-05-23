@@ -1,36 +1,32 @@
 ( function(angular) {
 	angular
-		.module('portfolioApp', ['ngRoute', 'ngAnimate']);
+		.module('portfolioApp', ['ui.router', 'ngAnimate']);
 } )(angular);
 ( function(angular) {
 	angular
 		.module('portfolioApp')
 		.config(routes);
 
-	function routes($routeProvider, $compileProvider) {
-		$routeProvider
-			.when('/', {
+	function routes($stateProvider, $urlRouterProvider, $compileProvider) {
+		$urlRouterProvider.otherwise('/');
+		$stateProvider
+			.state('home', {
+				url: '/',
 				templateUrl: 'partials/home.html',
 				controller: 'homeCtrl',
 				controllerAs: 'vm'
 			})
-			.when('/gallery', {
+			.state('portfolio', {
+				url: '/portfolio',
 				templateUrl: 'partials/gallery.html',
 				controller: 'galleryCtrl',
 				controllerAs: 'vm'
 			})
-			.when('/tech', {
+			.state('tech', {
+				url: '/tech',
 				templateUrl: 'partials/tech.html',
 				controller: 'techCtrl',
 				controllerAs: 'vm'
-			})
-			.when('/contact', {
-				templateUrl: 'partials/contact.html',
-				controller: 'contactCtrl',
-				controllerAs: 'vm'
-			})
-			.otherwise({
-				redirectTo: '/'
 			});
 
 		$compileProvider.debugInfoEnabled(false);
@@ -70,6 +66,16 @@
 ( function(angular) {
 	angular
 		.module('portfolioApp')
+		.controller('footerCtrl', footerCtrl);
+
+	function footerCtrl($scope) {
+		var vm = this;
+	}
+		
+} )(angular);
+( function(angular) {
+	angular
+		.module('portfolioApp')
 		.controller('homeCtrl', homeCtrl);
 
 	function homeCtrl($scope, $location) {
@@ -88,4 +94,13 @@
 		var vm = this;
 	}
 
+} )(angular);
+( function(angular) {
+	angular
+		.module('portfolioApp')
+		.controller('techCtrl', techCtrl);
+
+	function techCtrl($scope) {
+		var vm = this;
+	}
 } )(angular);

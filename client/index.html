@@ -9,30 +9,35 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.min.css">
 	<link rel="stylesheet" href="/content/css/styles.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
-	<script src="/public/all.js"></script>
 </head>
-<body>
-	<section class="fixed-content-wrapper">
+<body id="top">
+	<div class="fixed-content-wrapper">
 		<nav ng-controller="navCtrl as vm" role="navigation">
 			<ul id="navbar-brand">
 				<li>
-					<a href="#/">Alex Quang</a>
+					<a ui-sref="home">Alex Quang</a>
 				</li>
 			</ul>
-			<ul ng-class="{ 'on-portfolio' : vm.currentUrl('/gallery') }">
+			<ul>
 				<li title="Navigation Menu" role="mobile-navigation"  class="mobile-navigation-btn" ng-class="{ 'open-menu' : vm.openMenu }">
 					<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu == false"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
 					<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
 				</li>
-				<li ng-class="{ 'active' : vm.currentUrl('/gallery'), 'inactive' : vm.currentUrl('/gallery') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/gallery">Portfolio</a></li>
-				<li ng-class="{ 'active' : vm.currentUrl('/tech'), 'inactive' : vm.currentUrl('/tech') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/tech">Technology</a></li>
-				<li title="Contact Me" ng-class="{ 'active' : vm.currentUrl('/contact'), 'inactive' : vm.currentUrl('/contact') == false, 'mobile-display' : vm.mobileScreen == true }"><a href="#/contact">Contact</a></li>
+				<li ui-sref-active="active" class="mobile-only" ng-class="{ 'inactive' : vm.currentUrl('/') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="home">Home</a></li>
+				<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/portfolio') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="portfolio">Portfolio</a></li>
+				<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/tech') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="tech">Technology</a></li>
 			</ul>
 		</nav>
-		<main ng-view></main>
-	</section>
+		<main ui-view role="main">
+		</main>
+		<footer ng-controller="footerCtrl as vm" role="footer">
+			
+		</footer>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
+	<script src="/public/all.js"></script>
 </body>
 </html>
