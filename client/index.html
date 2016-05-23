@@ -28,10 +28,20 @@
 				<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/tech') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="tech">Technology</a></li>
 			</ul>
 		</nav>
+		<header>
+			<div class="header-content">
+				<h1 class="title-heading">Full Stack Developer</h1>
+				<p class="intro-heading">Dedicated to constantly improving and committed to building beautiful web applications.</p>
+			</div>
+		</header>
 		<main ui-view role="main">
 		</main>
-		<footer ng-controller="footerCtrl as vm" role="footer">
-			
+		<footer ng-controller="footerCtrl as vm" id="footer" role="footer">
+			<div class="footer-content">
+				<h2 id="footer-heading">Contact Details</h2>
+				<p>For when you need to reach me</p>
+				<p><a href="mailto:alexquang1991@gmail.com">alexquang1991@gmail.com</a></p>
+			</div>
 		</footer>
 	</div>
 
