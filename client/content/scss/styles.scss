@@ -14,6 +14,7 @@ html, body {
 }
 
 body {
+	background: black;
 	overflow: auto;
 }
 
@@ -36,7 +37,8 @@ nav {
 		float: right;
 
 		.active {
-			background: #9358FE;
+			background: darken(#333, 15%);
+			border-bottom: 3px solid #9358fe;
 		}
 
 		.inactive {
@@ -58,6 +60,7 @@ nav {
 				text-align: center;
 				text-decoration: none;
 				color: white;
+				
 
 				&:visited, &:hover, &:link, &:active {
 					text-decoration: none;
@@ -116,8 +119,6 @@ main {
 .fixed-content-wrapper {
 	height: 100%;
 	width: 100%;
-	background: black;
-	overflow: auto;
 }
 
 // When the screen is not in mobile view, header is not limited.
@@ -304,6 +305,7 @@ header {
 
 		.active {
 			background: rgba(87, 96, 55, 0.9);
+			border: 0;
 		}
 
 		.inactive {

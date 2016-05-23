@@ -8,6 +8,7 @@ html, body {
   font-size: 1em; }
 
 body {
+  background: black;
   overflow: auto; }
 
 nav {
@@ -26,7 +27,8 @@ nav {
     padding: 0;
     float: right; }
     nav > ul .active {
-      background: #9358FE; }
+      background: #0d0d0d;
+      border-bottom: 3px solid #9358fe; }
     nav > ul .inactive:hover {
       background: #262626; }
     nav > ul > li {
@@ -78,9 +80,7 @@ main {
 
 .fixed-content-wrapper {
   height: 100%;
-  width: 100%;
-  background: black;
-  overflow: auto; }
+  width: 100%; }
 
 header {
   height: 100%;
@@ -203,7 +203,8 @@ header {
     float: none;
     background: rgba(0, 0, 0, 0.7); }
     nav > ul .active {
-      background: rgba(87, 96, 55, 0.9); }
+      background: rgba(87, 96, 55, 0.9);
+      border: 0; }
     nav > ul .inactive:hover {
       background: rgba(0, 0, 0, 0.5); }
     nav > ul > li {
