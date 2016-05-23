@@ -8,7 +8,6 @@ html, body {
   font-size: 1em; }
 
 body {
-  background: black;
   overflow: auto; }
 
 nav {
@@ -79,7 +78,9 @@ main {
 
 .fixed-content-wrapper {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background: black;
+  overflow: auto; }
 
 header {
   height: 100%;
@@ -136,6 +137,19 @@ header {
       width: 70%;
       margin: 0 auto;
       margin-bottom: 1.25em; }
+
+.content-wrapper.portfolio {
+  color: #268BD2;
+  padding-top: 5%;
+  background: #333; }
+  .content-wrapper.portfolio .portfolio-heading {
+    font-weight: 700;
+    font-size: 3.125em;
+    text-transform: uppercase;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 0.9375em; }
 
 #footer {
   position: relative;
