@@ -213,29 +213,30 @@ header {
 	width: 100%;
 	height: 100%;
 	background: black;
-	color: #66D9EE;
+	color: white;
 	padding-top: 10%;
 	text-align: center;
 
-	.footer-content {
+	.footer-main-content {
 		position: absolute;
 		top: 30%;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
+
 		#footer-heading {
 			text-transform: uppercase;
 			font-weight: 700;
 			width: 70%;
 			margin: 0 auto;
-			font-size: em(50);
+			font-size: em(45);
 		}
 
 		p {
 			@extend #footer-heading;
 			margin: em(20) auto;
 			text-transform: none;
-			font-size: em(20);
+			font-size: em(25);
 
 			a {
 				color: #FC407B;;
@@ -251,6 +252,14 @@ header {
 			}
 		}
 	}
+
+	.copyright-text {
+		position: absolute;
+		top: 60%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
 }
 
 // Media Queries
@@ -258,7 +267,7 @@ header {
 	// Put background on body to account for varying heights of
 	// mobile devices breaking the styling.
 	body {
-		font-size: em(14);
+		font-size: em(15);
 		background: #333;
 	}
 
@@ -332,7 +341,8 @@ header {
 
 		.main-content {
 			height: 100%;
-			font-size: em(14);
+			font-size: em(13);
+			padding-top: em(40);
 
 			.social-icons-wrapper {
 				width: 80%;
@@ -367,6 +377,8 @@ header {
 		position: relative;
 
 		.header-content {
+			padding-top: 5%;
+			padding-bottom: 0;
 			position: absolute;
 			top: 20%;
 
@@ -386,6 +398,37 @@ header {
 				margin: 0 auto;
 				opacity: 0.8;
 			}
+		}
+	}
+
+	.footer-main-content {
+		font-size: em(14);
+
+		#footer-heading {
+			font-size: em(15);
+		}
+
+		p {
+			font-size: em(15);
+
+			a {
+				color: #FC407B;;
+				text-decoration: none;
+
+				&:visited, &:hover, &:link, &:active {
+					text-decoration: none;
+				}
+
+				&:hover {
+					color: darken(#fc407b, 10%);
+				}
+			}
+		}
+	}
+
+	.copyright-text {
+		h3 {
+			font-size: em(15);
 		}
 	}
 }

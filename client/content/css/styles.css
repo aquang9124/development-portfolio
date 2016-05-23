@@ -143,36 +143,42 @@ header {
   width: 100%;
   height: 100%;
   background: black;
-  color: #66D9EE;
+  color: white;
   padding-top: 10%;
   text-align: center; }
-  #footer .footer-content {
+  #footer .footer-main-content {
     position: absolute;
     top: 30%;
     left: 0;
     right: 0;
     margin: 0 auto; }
-    #footer .footer-content #footer-heading, #footer .footer-content p {
+    #footer .footer-main-content #footer-heading, #footer .footer-main-content p {
       text-transform: uppercase;
       font-weight: 700;
       width: 70%;
       margin: 0 auto;
-      font-size: 3.125em; }
-    #footer .footer-content p {
+      font-size: 2.8125em; }
+    #footer .footer-main-content p {
       margin: 1.25em auto;
       text-transform: none;
-      font-size: 1.25em; }
-      #footer .footer-content p a {
+      font-size: 1.5625em; }
+      #footer .footer-main-content p a {
         color: #FC407B;
         text-decoration: none; }
-        #footer .footer-content p a:visited, #footer .footer-content p a:hover, #footer .footer-content p a:link, #footer .footer-content p a:active {
+        #footer .footer-main-content p a:visited, #footer .footer-main-content p a:hover, #footer .footer-main-content p a:link, #footer .footer-main-content p a:active {
           text-decoration: none; }
-        #footer .footer-content p a:hover {
+        #footer .footer-main-content p a:hover {
           color: #fb0e58; }
+  #footer .copyright-text {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   body {
-    font-size: 0.875em;
+    font-size: 0.9375em;
     background: #333; }
   nav {
     padding: 0; }
@@ -211,7 +217,8 @@ header {
           text-decoration: none; }
   .content-wrapper .main-content {
     height: 100%;
-    font-size: 0.875em; }
+    font-size: 0.8125em;
+    padding-top: 2.5em; }
     .content-wrapper .main-content .social-icons-wrapper {
       width: 80%; }
       .content-wrapper .main-content .social-icons-wrapper .social-links {
@@ -230,6 +237,8 @@ header {
     height: 300px;
     position: relative; }
     header .header-content {
+      padding-top: 5%;
+      padding-bottom: 0;
       position: absolute;
       top: 20%; }
       header .header-content .title-heading {
@@ -244,4 +253,19 @@ header {
         font-size: 0.9375em;
         width: 70%;
         margin: 0 auto;
-        opacity: 0.8; } }
+        opacity: 0.8; }
+  .footer-main-content {
+    font-size: 0.875em; }
+    .footer-main-content #footer-heading, #footer .footer-main-content p {
+      font-size: 0.9375em; }
+    .footer-main-content p {
+      font-size: 0.9375em; }
+      .footer-main-content p a {
+        color: #FC407B;
+        text-decoration: none; }
+        .footer-main-content p a:visited, .footer-main-content p a:hover, .footer-main-content p a:link, .footer-main-content p a:active {
+          text-decoration: none; }
+        .footer-main-content p a:hover {
+          color: #fb0e58; }
+  .copyright-text h3 {
+    font-size: 0.9375em; } }
