@@ -18,6 +18,12 @@ body {
 	overflow: auto;
 }
 
+// Header container
+#header-container {
+	width: 100%;
+	height: 100%;
+}
+
 // Navigation menu stylings
 nav {
 	width: 100%;
@@ -160,6 +166,8 @@ header {
 		}
 	}
 }
+
+// Wrapper for site contents, most content goes here
 .content-wrapper {
 	width: 100%;
 	height: 100%;
@@ -208,8 +216,9 @@ header {
 
 }
 
+// Portfolio page stylings
 .content-wrapper.portfolio {
-	color: #268BD2;
+	color: #FC407B;
 	padding-top: 5%;
 	background: #333;
 
@@ -221,8 +230,46 @@ header {
 		text-align: center;
 		margin: 0 auto;
 		margin-bottom: em(15);
+		color: #fff;
+	}
+
+	.portfolio-content {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+		
+		// Auto height accounts for the sub-header
+		.row .col-md-6 .picture-box {
+			width: 100%;
+			height: auto;
+			position: relative;
+
+			// title of the project
+			.pic-sub-header {
+				height: 50px;
+				background: #fff;
+				text-align: center;
+				margin: 0;
+				line-height: 50px;
+			}
+
+		}
+
+		.row .col-md-6 a {
+			display: block;
+
+			img {
+				width: 100%;
+				height: 225px;
+				
+			}
+		}
 	}
 }
+
+
 
 // footer stylings
 #footer {
@@ -287,6 +334,11 @@ header {
 	body {
 		font-size: em(15);
 		background: #333;
+	}
+
+	// Header container's height is set to auto so it doesn't push the about me section down
+	#header-container {
+		height: auto;
 	}
 
 	// Remove the padding on the navigation bar

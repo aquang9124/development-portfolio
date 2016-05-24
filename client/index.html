@@ -12,28 +12,34 @@
 </head>
 <body id="top">
 	<div class="fixed-content-wrapper">
-		<nav ng-controller="navCtrl as vm" role="navigation">
-			<ul id="navbar-brand">
-				<li>
-					<a ui-sref="home">Alex Quang</a>
-				</li>
-			</ul>
-			<ul>
-				<li title="Navigation Menu" role="mobile-navigation"  class="mobile-navigation-btn" ng-class="{ 'open-menu' : vm.openMenu }">
-					<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu == false"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
-					<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
-				</li>
-				<li ui-sref-active="active" class="mobile-only" ng-class="{ 'inactive' : vm.currentUrl('/') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="home">Home</a></li>
-				<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/portfolio') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="portfolio">Portfolio</a></li>
-				<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/tech') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="tech">Technology</a></li>
-			</ul>
-		</nav>
-		<header>
-			<div class="header-content">
-				<h1 class="title-heading">Full Stack Developer</h1>
-				<p class="intro-heading">Dedicated to constantly improving and committed to building beautiful web applications.</p>
-			</div>
-		</header>
+		<section id="header-container" ng-controller="navCtrl as vm">
+			<nav role="navigation">
+				<ul id="navbar-brand">
+					<li>
+						<a ui-sref="home">Alex Quang</a>
+					</li>
+				</ul>
+				<ul>
+					<li title="Navigation Menu" role="mobile-navigation" class="mobile-navigation-btn" ng-class="{ 'open-menu' : vm.openMenu }">
+						<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu == false"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+						<a href="javascript:void(0)" ng-click="vm.showLinks()" ng-if="vm.openMenu"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+					</li>
+					<li ui-sref-active="active" class="mobile-only" ng-class="{ 'inactive' : vm.currentUrl('/') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="home">Home</a></li>
+					<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/portfolio') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="portfolio">Portfolio</a></li>
+					<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/tech') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="tech">Technology</a></li>
+				</ul>
+			</nav>
+			<header>
+				<div class="header-content" ng-if="vm.currentUrl('/')">
+					<h1 class="title-heading">Full Stack Developer</h1>
+					<p class="intro-heading">Dedicated to constantly improving and committed to building beautiful web applications.</p>
+				</div>
+				<div class="header-content" ng-if="vm.currentUrl('/portfolio')">
+					<h1 class="title-heading">Portfolio</h1>
+					<p class="intro-heading">A collection of my latest projects.</p>
+				</div>
+			</header>
+		</section>
 		<main ui-view role="main">
 		</main>
 		<footer ng-controller="footerCtrl as vm" id="footer" role="footer">
@@ -47,7 +53,8 @@
 			</section>
 		</footer>
 	</div>
-
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
