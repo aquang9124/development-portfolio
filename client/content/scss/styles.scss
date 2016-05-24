@@ -109,8 +109,6 @@ main {
 	display: block;
 	height: 100%;
 	width: 100%;
-	margin-bottom: em(100);
-	box-sizing: content-box;
 }
 
 // Class stylings
@@ -124,13 +122,12 @@ main {
 }
 
 .fixed-content-wrapper {
-	height: 100%;
+	height: auto;
 	width: 100%;
 }
 
 // When the screen is not in mobile view, header is not limited.
 header {
-	height: 100%;
 	width: 100%;
 	background: 
 		linear-gradient(
@@ -145,7 +142,6 @@ header {
 	.header-content {
 		margin: 0 auto;
 		padding: 10% 0;
-		height: 100%;
 		width: 100%;
 		color: #fff;
 
@@ -168,59 +164,53 @@ header {
 	}
 }
 
-// Wrapper for site contents, most content goes here
-.content-wrapper {
+
+// Main content for home page
+.main-content {
 	width: 100%;
-	height: 100%;
+	padding-top: em(90);
+	padding-bottom: em(90);
+	background: #333;
+	color: white;
 
-	// Main content takes up 100% of screen
-	// When you scroll down the header completely
-	// disappears. It's kinda cool
-	.main-content {
-		width: 100%;
-		height: 100%;
-		padding-top: em(90);
-		background: #333;
-		color: white;
-
-		.social-icons-wrapper {
-			width: 70%;
-			margin: 0 auto;
-			margin-bottom: em(40);
-			
-			.social-links {
-				margin-right: em(10);
-			}
-
+	.social-icons-wrapper {
+		width: 70%;
+		margin: 0 auto;
+		margin-bottom: em(40);
+		
+		.social-links {
+			margin-right: em(10);
 		}
 
-		p {
-			width: 70%;
-			margin: em(10) auto;
-			color: #FC407B;
-			text-align: justify;
-
-		}
-
-		ul {
-			width: 70%;
-			padding-left: 18%;
-			color: #FCF1CC;
-		}
-
-		h2 {
-			width: 70%;
-			margin: 0 auto;
-			margin-bottom: em(20);
-		}
 	}
 
+	p {
+		width: 70%;
+		margin: em(10) auto;
+		color: #FC407B;
+		text-align: justify;
+
+	}
+
+	ul {
+		width: 70%;
+		padding-left: 18%;
+		color: #FCF1CC;
+	}
+
+	h2 {
+		width: 70%;
+		margin: 0 auto;
+		margin-bottom: em(20);
+	}
 }
+
+
 
 // Portfolio page stylings
 .container-fluid.portfolio {
 	color: #FC407B;
-	padding-top: 4%;
+	padding-top: 5%;
 	padding-bottom: 5%;
 	background: #333;
 
@@ -230,7 +220,7 @@ header {
 		text-transform: uppercase;
 		width: 80%;
 		text-align: center;
-		margin: 0 auto em(10) auto;
+		margin: 0 auto em(20) auto;
 		color: #fff;
 	}
 
@@ -244,7 +234,7 @@ header {
 
 		img {
 			width: 100%;
-			height: em(250);
+			height: em(300);
 			display: block;
 		}
 
@@ -307,6 +297,7 @@ header {
 
 }
 
+// Stylings to get the pic overlay working
 .effect .pic-overlay {
 	top: 0;
 	left: 0;
@@ -329,56 +320,43 @@ header {
 // footer stylings
 #footer {
 	position: relative;
-	clear: both;
-	width: 100%;
-	height: 100%;
 	background: black;
 	color: white;
-	padding-top: 10%;
 	text-align: center;
+	padding-bottom: 5%;
+	padding-top: 5%;
 
-	.footer-main-content {
-		position: absolute;
-		top: 30%;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
 
-		#footer-heading {
-			text-transform: uppercase;
-			font-weight: 700;
-			width: 70%;
-			margin: 0 auto;
-			font-size: em(45);
-		}
+	#footer-heading {
+		text-transform: uppercase;
+		font-weight: 700;
+		width: 70%;
+		margin: 0 auto em(10) auto;
+		font-size: em(45);
+	}
 
-		p {
-			@extend #footer-heading;
-			margin: em(20) auto;
-			text-transform: none;
-			font-size: em(25);
+	p {
+		@extend #footer-heading;
+		margin: em(10) auto em(10) auto;
+		text-transform: none;
+		font-size: em(25);
 
-			a {
-				color: #FC407B;;
+		a {
+			color: #FC407B;;
+			text-decoration: none;
+
+			&:visited, &:hover, &:link, &:active {
 				text-decoration: none;
+			}
 
-				&:visited, &:hover, &:link, &:active {
-					text-decoration: none;
-				}
-
-				&:hover {
-					color: darken(#fc407b, 10%);
-				}
+			&:hover {
+				color: darken(#fc407b, 10%);
 			}
 		}
 	}
 
 	.copyright-text {
-		position: absolute;
-		top: 60%;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
+		margin: em(10) auto;
 	}
 }
 
@@ -462,40 +440,38 @@ header {
 		}
 	}
 	
-	// Keeping this class simple. Note to self: SASS extends should improve reusability.
-	.content-wrapper {
+	// Main content for home page
+	.main-content {
+		height: 100%;
+		font-size: em(13);
+		padding-top: em(40);
+		padding-bottom: em(40);
 
-		.main-content {
-			height: 100%;
-			font-size: em(13);
-			padding-top: em(40);
-
-			.social-icons-wrapper {
-				width: 80%;
-				
-				.social-links {
-					margin-right: em(10);
-				}
-
-			}
-
-			p {
-				width: 80%;
-				color: #FC407B;
-			}
-
-			ul {
-				width: 80%;
-				padding-left: 15%;
-				margin: em(10) 0;
-				color: #FCF1CC;
-			}
-
-			h2 {
-				width: 80%;
+		.social-icons-wrapper {
+			width: 80%;
+			
+			.social-links {
+				margin-right: em(10);
 			}
 
 		}
+
+		p {
+			width: 80%;
+			color: #FC407B;
+		}
+
+		ul {
+			width: 80%;
+			padding-left: 15%;
+			margin: em(10) 0;
+			color: #FCF1CC;
+		}
+
+		h2 {
+			width: 80%;
+		}
+
 	}
 
 	header {
@@ -527,12 +503,18 @@ header {
 		}
 	}
 
-	.footer-main-content {
-		font-size: em(14);
+
+	// footer stylings
+	#footer {
+		padding-top: 5%;
+		padding-bottom: 5%;
 
 		#footer-heading {
-			font-size: em(15);
+			font-size: em(25);
+			margin-top: em(10);
 		}
+
+
 
 		p {
 			font-size: em(15);
@@ -550,12 +532,11 @@ header {
 				}
 			}
 		}
-	}
 
-	.copyright-text {
-		h3 {
+		.copyright-text {
 			font-size: em(15);
 		}
+
 	}
 
 	// Everything in the portfolio section gets a lot smaller in mobile
@@ -580,7 +561,7 @@ header {
 			width: 80%;
 			height: auto;
 			position: relative;
-			padding-bottom: em(20);
+			padding-bottom: em(40);
 			margin: 0 auto;
 
 			img {
@@ -594,5 +575,9 @@ header {
 
 			
 		}
+	}
+
+	.effect .picture-box:hover .pic-overlay {
+		height: calc(100% - 87px);
 	}
 }

@@ -42,15 +42,27 @@
 		</section>
 		<main ui-view role="main">
 		</main>
-		<footer ng-controller="footerCtrl as vm" id="footer" role="footer">
-			<div class="footer-main-content">
-				<h2 id="footer-heading">Contact</h2>
-				<p>Feel free to email me!</p>
-				<p><a href="mailto:alexquang1991@gmail.com">alexquang1991@gmail.com</a></p>
+		<footer ng-controller="footerCtrl as vm" id="footer" class="container-fluid" role="footer">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 id="footer-heading">Contact</h2>
+				</div>
 			</div>
-			<section class="copyright-text">
-				<h3>Copyright &copy; Alexander Quang</h3>
-			</section>
+			<div class="row">
+				<div class="col-xs-12">
+					<p>Feel free to email me!</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p><a href="mailto:alexquang1991@gmail.com">alexquang1991@gmail.com</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 class="copyright-text">Copyright &copy; Alexander Quang</h3>
+				</div>
+			</div>
 		</footer>
 	</div>
 	

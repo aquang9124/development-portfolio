@@ -73,9 +73,7 @@ nav {
 main {
   display: block;
   height: 100%;
-  width: 100%;
-  margin-bottom: 6.25em;
-  box-sizing: content-box; }
+  width: 100%; }
 
 .mobile-only {
   display: none; }
@@ -84,11 +82,10 @@ main {
   display: none; }
 
 .fixed-content-wrapper {
-  height: 100%;
+  height: auto;
   width: 100%; }
 
 header {
-  height: 100%;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/content/img/htmlpic.jpg") center center no-repeat;
   background-size: cover;
@@ -97,7 +94,6 @@ header {
   header .header-content {
     margin: 0 auto;
     padding: 10% 0;
-    height: 100%;
     width: 100%;
     color: #fff; }
     header .header-content .title-heading {
@@ -114,38 +110,35 @@ header {
       margin: 0 auto;
       opacity: 0.8; }
 
-.content-wrapper {
+.main-content {
   width: 100%;
-  height: 100%; }
-  .content-wrapper .main-content {
-    width: 100%;
-    height: 100%;
-    padding-top: 5.625em;
-    background: #333;
-    color: white; }
-    .content-wrapper .main-content .social-icons-wrapper {
-      width: 70%;
-      margin: 0 auto;
-      margin-bottom: 2.5em; }
-      .content-wrapper .main-content .social-icons-wrapper .social-links {
-        margin-right: 0.625em; }
-    .content-wrapper .main-content p {
-      width: 70%;
-      margin: 0.625em auto;
-      color: #FC407B;
-      text-align: justify; }
-    .content-wrapper .main-content ul {
-      width: 70%;
-      padding-left: 18%;
-      color: #FCF1CC; }
-    .content-wrapper .main-content h2 {
-      width: 70%;
-      margin: 0 auto;
-      margin-bottom: 1.25em; }
+  padding-top: 5.625em;
+  padding-bottom: 5.625em;
+  background: #333;
+  color: white; }
+  .main-content .social-icons-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2.5em; }
+    .main-content .social-icons-wrapper .social-links {
+      margin-right: 0.625em; }
+  .main-content p {
+    width: 70%;
+    margin: 0.625em auto;
+    color: #FC407B;
+    text-align: justify; }
+  .main-content ul {
+    width: 70%;
+    padding-left: 18%;
+    color: #FCF1CC; }
+  .main-content h2 {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1.25em; }
 
 .container-fluid.portfolio {
   color: #FC407B;
-  padding-top: 4%;
+  padding-top: 5%;
   padding-bottom: 5%;
   background: #333; }
   .container-fluid.portfolio .portfolio-heading {
@@ -154,7 +147,7 @@ header {
     text-transform: uppercase;
     width: 80%;
     text-align: center;
-    margin: 0 auto 0.625em auto;
+    margin: 0 auto 1.25em auto;
     color: #fff; }
   .container-fluid.portfolio .row .col-md-6 .picture-box {
     width: 95%;
@@ -164,7 +157,7 @@ header {
     padding-bottom: 1.25em; }
     .container-fluid.portfolio .row .col-md-6 .picture-box img {
       width: 100%;
-      height: 15.625em;
+      height: 18.75em;
       display: block; }
     .container-fluid.portfolio .row .col-md-6 .picture-box .pic-sub-header {
       height: 50px;
@@ -228,42 +221,30 @@ header {
 
 #footer {
   position: relative;
-  clear: both;
-  width: 100%;
-  height: 100%;
   background: black;
   color: white;
-  padding-top: 10%;
-  text-align: center; }
-  #footer .footer-main-content {
-    position: absolute;
-    top: 30%;
-    left: 0;
-    right: 0;
-    margin: 0 auto; }
-    #footer .footer-main-content #footer-heading, #footer .footer-main-content p {
-      text-transform: uppercase;
-      font-weight: 700;
-      width: 70%;
-      margin: 0 auto;
-      font-size: 2.8125em; }
-    #footer .footer-main-content p {
-      margin: 1.25em auto;
-      text-transform: none;
-      font-size: 1.5625em; }
-      #footer .footer-main-content p a {
-        color: #FC407B;
+  text-align: center;
+  padding-bottom: 5%;
+  padding-top: 5%; }
+  #footer #footer-heading, #footer p {
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 70%;
+    margin: 0 auto 0.625em auto;
+    font-size: 2.8125em; }
+  #footer p {
+    margin: 0.625em auto 0.625em auto;
+    text-transform: none;
+    font-size: 1.5625em; }
+    #footer p a {
+      color: #FC407B;
+      text-decoration: none; }
+      #footer p a:visited, #footer p a:hover, #footer p a:link, #footer p a:active {
         text-decoration: none; }
-        #footer .footer-main-content p a:visited, #footer .footer-main-content p a:hover, #footer .footer-main-content p a:link, #footer .footer-main-content p a:active {
-          text-decoration: none; }
-        #footer .footer-main-content p a:hover {
-          color: #fb0e58; }
+      #footer p a:hover {
+        color: #fb0e58; }
   #footer .copyright-text {
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-    margin: 0 auto; }
+    margin: 0.625em auto; }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   body {
@@ -307,23 +288,24 @@ header {
         display: block; }
         nav > ul li.mobile-display > a:hover {
           text-decoration: none; }
-  .content-wrapper .main-content {
+  .main-content {
     height: 100%;
     font-size: 0.8125em;
-    padding-top: 2.5em; }
-    .content-wrapper .main-content .social-icons-wrapper {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em; }
+    .main-content .social-icons-wrapper {
       width: 80%; }
-      .content-wrapper .main-content .social-icons-wrapper .social-links {
+      .main-content .social-icons-wrapper .social-links {
         margin-right: 0.625em; }
-    .content-wrapper .main-content p {
+    .main-content p {
       width: 80%;
       color: #FC407B; }
-    .content-wrapper .main-content ul {
+    .main-content ul {
       width: 80%;
       padding-left: 15%;
       margin: 0.625em 0;
       color: #FCF1CC; }
-    .content-wrapper .main-content h2 {
+    .main-content h2 {
       width: 80%; }
   header {
     height: 300px;
@@ -346,21 +328,23 @@ header {
         width: 70%;
         margin: 0 auto;
         opacity: 0.8; }
-  .footer-main-content {
-    font-size: 0.875em; }
-    .footer-main-content #footer-heading, #footer .footer-main-content p {
+  #footer {
+    padding-top: 5%;
+    padding-bottom: 5%; }
+    #footer #footer-heading, #footer p {
+      font-size: 1.5625em;
+      margin-top: 0.625em; }
+    #footer p {
       font-size: 0.9375em; }
-    .footer-main-content p {
-      font-size: 0.9375em; }
-      .footer-main-content p a {
+      #footer p a {
         color: #FC407B;
         text-decoration: none; }
-        .footer-main-content p a:visited, .footer-main-content p a:hover, .footer-main-content p a:link, .footer-main-content p a:active {
+        #footer p a:visited, #footer p a:hover, #footer p a:link, #footer p a:active {
           text-decoration: none; }
-        .footer-main-content p a:hover {
+        #footer p a:hover {
           color: #fb0e58; }
-  .copyright-text h3 {
-    font-size: 0.9375em; }
+    #footer .copyright-text {
+      font-size: 0.9375em; }
   .container-fluid.portfolio {
     color: #FC407B;
     padding-top: 5%;
@@ -378,9 +362,11 @@ header {
       width: 80%;
       height: auto;
       position: relative;
-      padding-bottom: 1.25em;
+      padding-bottom: 2.5em;
       margin: 0 auto; }
       .container-fluid.portfolio .row .col-md-6 .picture-box img {
         height: 11.25em; }
       .container-fluid.portfolio .row .col-md-6 .picture-box .pic-sub-header {
-        font-size: 0.9375em; } }
+        font-size: 0.9375em; }
+  .effect .picture-box:hover .pic-overlay {
+    height: calc(100% - 87px); } }
