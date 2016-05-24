@@ -38,13 +38,18 @@
 		.module('portfolioApp')
 		.controller('navCtrl', navCtrl);
 
-	function navCtrl($scope, $location) {
+	function navCtrl($rootScope, $scope, $location) {
 		var vm = this;
 
 		vm.currentUrl = currentUrl;
 		vm.showLinks = showLinks;
 		vm.mobileScreen = false;
 		vm.openMenu = false;
+
+		// Autoscroll to top on stateChange
+		$rootScope.$on('$stateChangeSuccess', function() {
+		   document.body.scrollTop = document.documentElement.scrollTop = 0;
+		});
 
 		// Function implementations
 		function currentUrl(urlLocation) {
@@ -92,6 +97,7 @@
 	// Implementation of controller as standalone function	
 	function galleryCtrl($scope) {
 		var vm = this;
+
 	}
 
 } )(angular);
