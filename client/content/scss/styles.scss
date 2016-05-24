@@ -5,6 +5,8 @@
 @mixin transitions($time, $type) {
 	-webkit-transition: all $time $type;
 	-moz-transition: all $time $type;
+	-ms-transition:all $time $type;
+	-o-transition:all $time $type;
 	transition: all $time $type;
 }
 
@@ -196,7 +198,7 @@ header.tech-header {
 	      rgba(0, 0, 0, 0.65), 
 	      rgba(0, 0, 0, 0.65)
 	    ),
-		url('/content/img/htmlpic.jpg') center center no-repeat;
+		url('/content/img/cityscape.jpg') center center no-repeat;
 	background-size: cover;
 }
 
@@ -358,15 +360,35 @@ header.tech-header {
 	padding-top: 5%;
 	padding-bottom: 5%;
 
+	.col-xs-12 h1 {
+		color: white;
+		text-align: center;
+		margin: em(10) auto;
+	}
+
 	.tech-box {
 		border: 2px solid #FE9720;
 		background-color: #48483E;
+		margin-bottom: em(20);
+		height: auto;
 
 		.tech-icon {
 			display: block;
 			color: white;
 			text-align: center;
 			padding: em(5) 0;
+			min-height: 130px;
+			position: relative;
+
+			.tech-pic {
+				position: absolute;
+				top: 20%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				max-height: 80px;
+				background-color: #48483E;
+			}
 		}
 
 		.tech-icon:hover {
@@ -379,25 +401,35 @@ header.tech-header {
 			text-align: center;
 
 			h3 {
-				height: 50px;
-				line-height: 50px;
+				height: 45px;
+				line-height: 45px;
 				margin: 0;
 			}
 		}
 
 		.repo-links {
 			background-color: darken(#48483E, 25%) !important;
-		}
+			text-align: center;
+			min-height: em(50);
+			line-height: 50px;
 
-		.repo-links.ng-hide-add, .repo-links.ng-hide-remove {
-			@include transitions(0s, linear);
-		}
+			> a {
+				display: block;
+				color: #FE9720;
+				text-transform: uppercase;
 
-		.repo-links.ng-hide-add-active, .repo-links.ng-hide-remove-active {
-			@include transitions(0.25s, ease-in-out);
-		}
+				&:visited, &:hover, &:link, &:active {
+					text-decoration: none;
+				}
+
+				&:hover {
+					color: darken(#fe9720, 10%);
+				}
+			}
+		}	
 	}
 }
+
 
 
 // footer stylings
@@ -420,7 +452,7 @@ header.tech-header {
 
 	p {
 		@extend #footer-heading;
-		margin: em(10) auto 5% auto;
+		margin: em(10) auto em(10) auto;
 		text-transform: none;
 		font-size: em(25);
 
@@ -439,10 +471,10 @@ header.tech-header {
 	}
 
 	.copyright-text {
-		margin: 5% auto 0 auto;
+		margin: 3% auto 0 auto;
 	}
 
-	.download-btn {
+	.contact-btn {
 		border-radius: 0;
 		font-size: em(15) !important;
 		background-color: transparent;
@@ -450,7 +482,7 @@ header.tech-header {
 		@include transitions(0.5s, ease-in-out);
 	}
 
-	.download-btn:hover {
+	.contact-btn:hover {
 		background-color: darken(#FC407B, 15%);
 		color: white;
 	}

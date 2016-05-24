@@ -1,16 +1,45 @@
 <div class="container-fluid technology">
 	<div class="row">
+		<div class="col-xs-12">
+			<h1>Technologies</h1>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-3 col-sm-4">
 			<section class="tech-box">
 				<i class="fa fa-html5 fa-5x tech-icon" aria-hidden="true" ng-click="vm.setRepo('html5')"></i>
 				<section class="repo-links" ng-show="vm.currentRepo == 'html5'">
-					<a href="https://github.com/aquang9124/aquang9124.github.io" target="_blank">When I first started</a>
+					<a href="https://github.com/aquang9124/aquang9124.github.io" target="_blank">Early html project</a>
 				</section>
 				<section class="tech-title">
 					<h3>HTML5</h3>
 				</section>
 			</section>
-			
+		</div>
+		<div class="col-md-3 col-sm-4">
+			<section class="tech-box">
+				<i class="fa fa-css3 fa-5x tech-icon" aria-hidden="true" ng-click="vm.setRepo('css3')"></i>
+				<section class="repo-links" ng-show="vm.currentRepo == 'css3'">
+					<a href="https://github.com/aquang9124/aquang9124.github.io" target="_blank" title="Showcases some of my best CSS">Development Portfolio</a>
+				</section>
+				<section class="tech-title">
+					<h3>CSS3</h3>
+				</section>
+			</section>
+		</div>
+		<div class="col-md-3 col-sm-4">
+			<section class="tech-box">
+				<div class="tech-icon" ng-click="vm.setRepo('php')">
+					<img class="tech-pic" src="/content/img/phpicon.png">
+				</div>
+				<section class="repo-links" ng-show="vm.currentRepo == 'php'">
+					<a href="https://github.com/aquang9124/blog-cards-laravel" target="_blank">Laravel Note Posts</a>
+					<a href="https://github.com/aquang9124/books_laravel" target="_blank">Laravel Book Review</a>
+				</section>
+				<section class="tech-title">
+					<h3>PHP</h3>
+				</section>
+			</section>
 		</div>
 	</div>
 </div>

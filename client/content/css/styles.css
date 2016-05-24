@@ -120,7 +120,7 @@ header.portfolio-header {
   background-size: cover; }
 
 header.tech-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/content/img/htmlpic.jpg") center center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/content/img/cityscape.jpg") center center no-repeat;
   background-size: cover; }
 
 .main-content {
@@ -234,14 +234,30 @@ header.tech-header {
 .container-fluid.technology {
   padding-top: 5%;
   padding-bottom: 5%; }
+  .container-fluid.technology .col-xs-12 h1 {
+    color: white;
+    text-align: center;
+    margin: 0.625em auto; }
   .container-fluid.technology .tech-box {
     border: 2px solid #FE9720;
-    background-color: #48483E; }
+    background-color: #48483E;
+    margin-bottom: 1.25em;
+    height: auto; }
     .container-fluid.technology .tech-box .tech-icon {
       display: block;
       color: white;
       text-align: center;
-      padding: 0.3125em 0; }
+      padding: 0.3125em 0;
+      min-height: 130px;
+      position: relative; }
+      .container-fluid.technology .tech-box .tech-icon .tech-pic {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-height: 80px;
+        background-color: #48483E; }
     .container-fluid.technology .tech-box .tech-icon:hover {
       cursor: pointer; }
     .container-fluid.technology .tech-box .tech-title {
@@ -249,19 +265,22 @@ header.tech-header {
       color: #48483E;
       text-align: center; }
       .container-fluid.technology .tech-box .tech-title h3 {
-        height: 50px;
-        line-height: 50px;
+        height: 45px;
+        line-height: 45px;
         margin: 0; }
     .container-fluid.technology .tech-box .repo-links {
-      background-color: #030303 !important; }
-    .container-fluid.technology .tech-box .repo-links.ng-hide-add, .container-fluid.technology .tech-box .repo-links.ng-hide-remove {
-      -webkit-transition: all 0s linear;
-      -moz-transition: all 0s linear;
-      transition: all 0s linear; }
-    .container-fluid.technology .tech-box .repo-links.ng-hide-add-active, .container-fluid.technology .tech-box .repo-links.ng-hide-remove-active {
-      -webkit-transition: all 0.25s ease-in-out;
-      -moz-transition: all 0.25s ease-in-out;
-      transition: all 0.25s ease-in-out; }
+      background-color: #030303 !important;
+      text-align: center;
+      min-height: 3.125em;
+      line-height: 50px; }
+      .container-fluid.technology .tech-box .repo-links > a {
+        display: block;
+        color: #FE9720;
+        text-transform: uppercase; }
+        .container-fluid.technology .tech-box .repo-links > a:visited, .container-fluid.technology .tech-box .repo-links > a:hover, .container-fluid.technology .tech-box .repo-links > a:link, .container-fluid.technology .tech-box .repo-links > a:active {
+          text-decoration: none; }
+        .container-fluid.technology .tech-box .repo-links > a:hover {
+          color: #ea7e01; }
 
 #footer {
   background: black;
@@ -277,7 +296,7 @@ header.tech-header {
     margin: 0 auto 0.625em auto;
     font-size: 2.8125em; }
   #footer p {
-    margin: 0.625em auto 5% auto;
+    margin: 0.625em auto 0.625em auto;
     text-transform: none;
     font-size: 1.5625em; }
     #footer p a {
@@ -288,16 +307,18 @@ header.tech-header {
       #footer p a:hover {
         color: #fb0e58; }
   #footer .copyright-text {
-    margin: 5% auto 0 auto; }
-  #footer .download-btn {
+    margin: 3% auto 0 auto; }
+  #footer .contact-btn {
     border-radius: 0;
     font-size: 0.9375em !important;
     background-color: transparent;
     color: #FC407B;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
-  #footer .download-btn:hover {
+  #footer .contact-btn:hover {
     background-color: #ec044d;
     color: white; }
 
