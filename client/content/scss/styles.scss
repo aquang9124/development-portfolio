@@ -246,6 +246,12 @@ header {
 			height: auto;
 			position: relative;
 
+			img {
+				max-width: 100%;
+				height: auto;
+				display: block;
+			}
+
 			// title of the project
 			.pic-sub-header {
 				height: 50px;
@@ -255,21 +261,74 @@ header {
 				line-height: 50px;
 			}
 
-		}
+			// overlay stylings
+			.pic-overlay {
+				display: block;
+				position: absolute;
+				z-index: 20;
+				background: rgba(0, 0, 0, 0.8);
+				overflow: hidden;
+				transition: all 0.5s;
 
-		.row .col-md-6 a {
-			display: block;
+				a.close-overlay {
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: 100;
+					width: 45px;
+					height: 45px;
+					font-size: 20px;
+					font-weight: 700;
+					color: #fff;
+					line-height: 45px;
+					text-align: center;
+					background-color: #000;
+					cursor: pointer;
+				}
 
-			img {
-				width: 100%;
-				height: 225px;
-				
+				a.close-overlay.hidden {
+					display: none;
+				}
+
+				a.expand {
+					display: block;
+					position: absolute;
+					z-index: 100;
+					width: 60px;
+					height: 60px;
+					border: solid 5px #fff;
+					text-align: center;
+					color: #fff;
+					line-height: 50px;
+					font-weight: 700;
+					font-size: 30px;
+					border-radius: 30px;
+				}
 			}
+
 		}
 	}
 }
 
+.effect .pic-overlay {
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 0;
+}
 
+.effect .pic-overlay a.expand {
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin: 0 auto 0 auto;
+}
+
+.effect .picture-box:hover .pic-overlay {
+	height: calc(100% - 50px);
+}
 
 // footer stylings
 #footer {
