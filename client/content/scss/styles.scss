@@ -110,6 +110,7 @@ main {
 	height: 100%;
 	width: 100%;
 	margin-bottom: em(100);
+	box-sizing: content-box;
 }
 
 // Class stylings
@@ -217,98 +218,93 @@ header {
 }
 
 // Portfolio page stylings
-.content-wrapper.portfolio {
+.container-fluid.portfolio {
 	color: #FC407B;
-	padding-top: 5%;
+	padding-top: 4%;
+	padding-bottom: 5%;
 	background: #333;
 
 	.portfolio-heading {
 		font-weight: 700;
 		font-size: em(50);
 		text-transform: uppercase;
-		width: 70%;
+		width: 80%;
 		text-align: center;
-		margin: 0 auto;
-		margin-bottom: em(15);
+		margin: 0 auto em(10) auto;
 		color: #fff;
 	}
 
-	.portfolio-content {
-		padding-left: 15px;
-		padding-right: 15px;
-		width: 100%;
+	// Auto height accounts for the sub-header
+	.row .col-md-6 .picture-box {
+		width: 95%;
 		height: auto;
+		position: relative;
 		margin: 0 auto;
-		
-		// Auto height accounts for the sub-header
-		.row .col-md-6 .picture-box {
+		padding-bottom: em(20);
+
+		img {
 			width: 100%;
-			height: auto;
-			position: relative;
+			height: em(250);
+			display: block;
+		}
 
-			img {
-				max-width: 100%;
-				height: auto;
-				display: block;
-			}
+		// title of the project
+		.pic-sub-header {
+			height: 50px;
+			background: #fff;
+			text-align: center;
+			margin: 0;
+			line-height: 50px;
+		}
 
-			// title of the project
-			.pic-sub-header {
-				height: 50px;
-				background: #fff;
-				text-align: center;
-				margin: 0;
-				line-height: 50px;
-			}
+		// overlay stylings
+		.pic-overlay {
+			display: block;
+			position: absolute;
+			z-index: 20;
+			background: rgba(0, 0, 0, 0.8);
+			overflow: hidden;
+			transition: all 0.5s;
 
-			// overlay stylings
-			.pic-overlay {
+			a.close-overlay {
 				display: block;
 				position: absolute;
-				z-index: 20;
-				background: rgba(0, 0, 0, 0.8);
-				overflow: hidden;
-				transition: all 0.5s;
-
-				a.close-overlay {
-					display: block;
-					position: absolute;
-					top: 0;
-					right: 0;
-					z-index: 100;
-					width: 45px;
-					height: 45px;
-					font-size: 20px;
-					font-weight: 700;
-					color: #fff;
-					line-height: 45px;
-					text-align: center;
-					background-color: #000;
-					cursor: pointer;
-				}
-
-				a.close-overlay.hidden {
-					display: none;
-				}
-
-				a.expand {
-					display: block;
-					position: absolute;
-					z-index: 100;
-					width: 60px;
-					height: 60px;
-					border: solid 5px #fff;
-					text-align: center;
-					color: #fff;
-					line-height: 50px;
-					font-weight: 700;
-					font-size: 30px;
-					border-radius: 30px;
-				}
+				top: 0;
+				right: 0;
+				z-index: 100;
+				width: 45px;
+				height: 45px;
+				font-size: 20px;
+				font-weight: 700;
+				color: #fff;
+				line-height: 45px;
+				text-align: center;
+				background-color: #000;
+				cursor: pointer;
 			}
 
+			a.close-overlay.hidden {
+				display: none;
+			}
+
+			a.expand {
+				display: block;
+				position: absolute;
+				z-index: 100;
+				width: 60px;
+				height: 60px;
+				border: solid 5px #fff;
+				text-align: center;
+				color: #fff;
+				line-height: 50px;
+				font-weight: 700;
+				font-size: 30px;
+				border-radius: 30px;
+			}
 		}
+
 	}
+
 }
 
 .effect .pic-overlay {
@@ -327,7 +323,7 @@ header {
 }
 
 .effect .picture-box:hover .pic-overlay {
-	height: calc(100% - 50px);
+	height: calc(100% - 70px);
 }
 
 // footer stylings
@@ -559,6 +555,44 @@ header {
 	.copyright-text {
 		h3 {
 			font-size: em(15);
+		}
+	}
+
+	// Everything in the portfolio section gets a lot smaller in mobile
+	.container-fluid.portfolio {
+		color: #FC407B;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		background: #333;
+
+		.portfolio-heading {
+			font-weight: 700;
+			font-size: em(30);
+			text-transform: uppercase;
+			width: 80%;
+			text-align: center;
+			margin: 0 auto em(10) auto;
+			color: #fff;
+		}
+
+		// Auto height accounts for the sub-header
+		.row .col-md-6 .picture-box {
+			width: 80%;
+			height: auto;
+			position: relative;
+			padding-bottom: em(20);
+			margin: 0 auto;
+
+			img {
+				height: em(180);
+			}
+
+			// title of the project
+			.pic-sub-header {
+				font-size: em(15);
+			}
+
+			
 		}
 	}
 }

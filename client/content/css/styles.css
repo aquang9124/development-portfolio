@@ -74,7 +74,8 @@ main {
   display: block;
   height: 100%;
   width: 100%;
-  margin-bottom: 6.25em; }
+  margin-bottom: 6.25em;
+  box-sizing: content-box; }
 
 .mobile-only {
   display: none; }
@@ -142,76 +143,72 @@ header {
       margin: 0 auto;
       margin-bottom: 1.25em; }
 
-.content-wrapper.portfolio {
+.container-fluid.portfolio {
   color: #FC407B;
-  padding-top: 5%;
+  padding-top: 4%;
+  padding-bottom: 5%;
   background: #333; }
-  .content-wrapper.portfolio .portfolio-heading {
+  .container-fluid.portfolio .portfolio-heading {
     font-weight: 700;
     font-size: 3.125em;
     text-transform: uppercase;
-    width: 70%;
+    width: 80%;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 0.9375em;
+    margin: 0 auto 0.625em auto;
     color: #fff; }
-  .content-wrapper.portfolio .portfolio-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
+  .container-fluid.portfolio .row .col-md-6 .picture-box {
+    width: 95%;
     height: auto;
-    margin: 0 auto; }
-    .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 1.25em; }
+    .container-fluid.portfolio .row .col-md-6 .picture-box img {
       width: 100%;
-      height: auto;
-      position: relative; }
-      .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box img {
-        max-width: 100%;
-        height: auto;
-        display: block; }
-      .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box .pic-sub-header {
-        height: 50px;
-        background: #fff;
-        text-align: center;
-        margin: 0;
-        line-height: 50px; }
-      .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box .pic-overlay {
+      height: 15.625em;
+      display: block; }
+    .container-fluid.portfolio .row .col-md-6 .picture-box .pic-sub-header {
+      height: 50px;
+      background: #fff;
+      text-align: center;
+      margin: 0;
+      line-height: 50px; }
+    .container-fluid.portfolio .row .col-md-6 .picture-box .pic-overlay {
+      display: block;
+      position: absolute;
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      transition: all 0.5s; }
+      .container-fluid.portfolio .row .col-md-6 .picture-box .pic-overlay a.close-overlay {
         display: block;
         position: absolute;
-        z-index: 20;
-        background: rgba(0, 0, 0, 0.8);
-        overflow: hidden;
-        transition: all 0.5s; }
-        .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box .pic-overlay a.close-overlay {
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-          z-index: 100;
-          width: 45px;
-          height: 45px;
-          font-size: 20px;
-          font-weight: 700;
-          color: #fff;
-          line-height: 45px;
-          text-align: center;
-          background-color: #000;
-          cursor: pointer; }
-        .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box .pic-overlay a.close-overlay.hidden {
-          display: none; }
-        .content-wrapper.portfolio .portfolio-content .row .col-md-6 .picture-box .pic-overlay a.expand {
-          display: block;
-          position: absolute;
-          z-index: 100;
-          width: 60px;
-          height: 60px;
-          border: solid 5px #fff;
-          text-align: center;
-          color: #fff;
-          line-height: 50px;
-          font-weight: 700;
-          font-size: 30px;
-          border-radius: 30px; }
+        top: 0;
+        right: 0;
+        z-index: 100;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 45px;
+        text-align: center;
+        background-color: #000;
+        cursor: pointer; }
+      .container-fluid.portfolio .row .col-md-6 .picture-box .pic-overlay a.close-overlay.hidden {
+        display: none; }
+      .container-fluid.portfolio .row .col-md-6 .picture-box .pic-overlay a.expand {
+        display: block;
+        position: absolute;
+        z-index: 100;
+        width: 60px;
+        height: 60px;
+        border: solid 5px #fff;
+        text-align: center;
+        color: #fff;
+        line-height: 50px;
+        font-weight: 700;
+        font-size: 30px;
+        border-radius: 30px; }
 
 .effect .pic-overlay {
   top: 0;
@@ -227,7 +224,7 @@ header {
   margin: 0 auto 0 auto; }
 
 .effect .picture-box:hover .pic-overlay {
-  height: calc(100% - 50px); }
+  height: calc(100% - 70px); }
 
 #footer {
   position: relative;
@@ -363,4 +360,27 @@ header {
         .footer-main-content p a:hover {
           color: #fb0e58; }
   .copyright-text h3 {
-    font-size: 0.9375em; } }
+    font-size: 0.9375em; }
+  .container-fluid.portfolio {
+    color: #FC407B;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: #333; }
+    .container-fluid.portfolio .portfolio-heading {
+      font-weight: 700;
+      font-size: 1.875em;
+      text-transform: uppercase;
+      width: 80%;
+      text-align: center;
+      margin: 0 auto 0.625em auto;
+      color: #fff; }
+    .container-fluid.portfolio .row .col-md-6 .picture-box {
+      width: 80%;
+      height: auto;
+      position: relative;
+      padding-bottom: 1.25em;
+      margin: 0 auto; }
+      .container-fluid.portfolio .row .col-md-6 .picture-box img {
+        height: 11.25em; }
+      .container-fluid.portfolio .row .col-md-6 .picture-box .pic-sub-header {
+        font-size: 0.9375em; } }
