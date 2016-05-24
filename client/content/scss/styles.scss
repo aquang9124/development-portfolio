@@ -1,6 +1,13 @@
 @import "bourbon";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
+// Mixins
+@mixin transitions($time) {
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	transition: all $time ease-in-out;
+}
+
 // Global Stylings
 
 // Stylings for html, body
@@ -340,12 +347,12 @@ header {
 
 	p {
 		@extend #footer-heading;
-		margin: em(10) auto em(10) auto;
+		margin: em(10) auto 5% auto;
 		text-transform: none;
 		font-size: em(25);
 
 		a {
-			color: #FC407B;;
+			color: #FC407B;
 			text-decoration: none;
 
 			&:visited, &:hover, &:link, &:active {
@@ -359,7 +366,20 @@ header {
 	}
 
 	.copyright-text {
-		margin: em(10) auto;
+		margin: 5% auto 0 auto;
+	}
+
+	.download-btn {
+		border-radius: 0;
+		font-size: em(15) !important;
+		background-color: transparent;
+		color: #FC407B;
+		@include transitions(0.5s);
+	}
+
+	.download-btn:hover {
+		background-color: darken(#FC407B, 15%);
+		color: white;
 	}
 }
 
