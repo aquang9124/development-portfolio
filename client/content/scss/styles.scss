@@ -130,7 +130,7 @@ main {
 // When the screen is not in mobile view, header is not limited.
 header {
 	width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 
 	background: 
 		linear-gradient(
@@ -326,7 +326,8 @@ header {
 	color: white;
 	text-align: center;
 	padding-bottom: 5%;
-	padding-top: 5%;
+	padding-top: 20%;
+	min-height: 100vh;
 
 
 	#footer-heading {
@@ -477,6 +478,7 @@ header {
 	}
 
 	header {
+		min-height: 1px;
 		height: 300px;
 		position: relative;
 
@@ -510,6 +512,7 @@ header {
 	#footer {
 		padding-top: 5%;
 		padding-bottom: 5%;
+		min-height: 1px;
 
 		#footer-heading {
 			font-size: em(25);

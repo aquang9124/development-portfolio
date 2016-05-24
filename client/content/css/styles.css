@@ -88,7 +88,7 @@ main {
 
 header {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/content/img/htmlpic.jpg") center center no-repeat;
   background-size: cover;
   position: relative;
@@ -226,7 +226,8 @@ header {
   color: white;
   text-align: center;
   padding-bottom: 5%;
-  padding-top: 5%; }
+  padding-top: 20%;
+  min-height: 100vh; }
   #footer #footer-heading, #footer p {
     text-transform: uppercase;
     font-weight: 700;
@@ -309,6 +310,7 @@ header {
     .main-content h2 {
       width: 80%; }
   header {
+    min-height: 1px;
     height: 300px;
     position: relative; }
     header .header-content {
@@ -331,7 +333,8 @@ header {
         opacity: 0.8; }
   #footer {
     padding-top: 5%;
-    padding-bottom: 5%; }
+    padding-bottom: 5%;
+    min-height: 1px; }
     #footer #footer-heading, #footer p {
       font-size: 1.5625em;
       margin-top: 0.625em; }
