@@ -73,7 +73,8 @@ nav {
 main {
   display: block;
   min-height: 100vh;
-  width: 100%; }
+  width: 100%;
+  background: #333; }
 
 .mobile-only {
   display: none; }
@@ -151,8 +152,7 @@ header.tech-header {
 .container-fluid.portfolio {
   color: #FC407B;
   padding-top: 5%;
-  padding-bottom: 5%;
-  background: #333; }
+  padding-bottom: 5%; }
   .container-fluid.portfolio .portfolio-heading {
     font-weight: 700;
     font-size: 3.125em;
@@ -230,6 +230,38 @@ header.tech-header {
 
 .effect .picture-box:hover .pic-overlay {
   height: calc(100% - 70px); }
+
+.container-fluid.technology {
+  padding-top: 5%;
+  padding-bottom: 5%; }
+  .container-fluid.technology .tech-box {
+    border: 2px solid #FE9720;
+    background-color: #48483E; }
+    .container-fluid.technology .tech-box .tech-icon {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 0.3125em 0; }
+    .container-fluid.technology .tech-box .tech-icon:hover {
+      cursor: pointer; }
+    .container-fluid.technology .tech-box .tech-title {
+      background-color: white;
+      color: #48483E;
+      text-align: center; }
+      .container-fluid.technology .tech-box .tech-title h3 {
+        height: 50px;
+        line-height: 50px;
+        margin: 0; }
+    .container-fluid.technology .tech-box .repo-links {
+      background-color: #030303 !important; }
+    .container-fluid.technology .tech-box .repo-links.ng-hide-add, .container-fluid.technology .tech-box .repo-links.ng-hide-remove {
+      -webkit-transition: all 0s linear;
+      -moz-transition: all 0s linear;
+      transition: all 0s linear; }
+    .container-fluid.technology .tech-box .repo-links.ng-hide-add-active, .container-fluid.technology .tech-box .repo-links.ng-hide-remove-active {
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out; }
 
 #footer {
   background: black;

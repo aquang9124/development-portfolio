@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 // Mixins
-@mixin transitions($time) {
-	-webkit-transition: all $time ease-in-out;
-	-moz-transition: all $time ease-in-out;
-	transition: all $time ease-in-out;
+@mixin transitions($time, $type) {
+	-webkit-transition: all $time $type;
+	-moz-transition: all $time $type;
+	transition: all $time $type;
 }
 
 // Global Stylings
@@ -116,6 +116,7 @@ main {
 	display: block;
 	min-height: 100vh;
 	width: 100%;
+	background: #333;
 }
 
 // Class stylings
@@ -247,7 +248,7 @@ header.tech-header {
 	color: #FC407B;
 	padding-top: 5%;
 	padding-bottom: 5%;
-	background: #333;
+	
 
 	.portfolio-heading {
 		font-weight: 700;
@@ -352,6 +353,53 @@ header.tech-header {
 	height: calc(100% - 70px);
 }
 
+// Technology section stylings
+.container-fluid.technology {
+	padding-top: 5%;
+	padding-bottom: 5%;
+
+	.tech-box {
+		border: 2px solid #FE9720;
+		background-color: #48483E;
+
+		.tech-icon {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: em(5) 0;
+		}
+
+		.tech-icon:hover {
+			cursor: pointer;
+		}
+
+		.tech-title {
+			background-color: white;
+			color: #48483E;
+			text-align: center;
+
+			h3 {
+				height: 50px;
+				line-height: 50px;
+				margin: 0;
+			}
+		}
+
+		.repo-links {
+			background-color: darken(#48483E, 25%) !important;
+		}
+
+		.repo-links.ng-hide-add, .repo-links.ng-hide-remove {
+			@include transitions(0s, linear);
+		}
+
+		.repo-links.ng-hide-add-active, .repo-links.ng-hide-remove-active {
+			@include transitions(0.25s, ease-in-out);
+		}
+	}
+}
+
+
 // footer stylings
 #footer {
 	background: black;
@@ -399,7 +447,7 @@ header.tech-header {
 		font-size: em(15) !important;
 		background-color: transparent;
 		color: #FC407B;
-		@include transitions(0.5s);
+		@include transitions(0.5s, ease-in-out);
 	}
 
 	.download-btn:hover {
