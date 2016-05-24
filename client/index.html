@@ -29,7 +29,7 @@
 					<li ui-sref-active="active" ng-class="{ 'inactive' : vm.currentUrl('/tech') === false, 'mobile-display' : vm.mobileScreen == true }"><a ui-sref="tech">Technology</a></li>
 				</ul>
 			</nav>
-			<header>
+			<header ng-class="{ 'home-header' : vm.currentUrl('/'), 'portfolio-header' : vm.currentUrl('/portfolio'), 'tech-header' : vm.currentUrl('/tech') }">
 				<div class="header-content" ng-if="vm.currentUrl('/')">
 					<h1 class="title-heading">Full Stack Developer</h1>
 					<p class="intro-heading">Dedicated to constantly improving and committed to building beautiful web applications.</p>
