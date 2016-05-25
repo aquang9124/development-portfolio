@@ -260,6 +260,8 @@ header.tech-header {
         background-color: #48483E; }
     .container-fluid.technology .tech-box .tech-icon:hover {
       cursor: pointer; }
+    .container-fluid.technology .tech-box .tech-icon.no-repo:hover {
+      cursor: initial; }
     .container-fluid.technology .tech-box .tech-title {
       background-color: white;
       color: #48483E;

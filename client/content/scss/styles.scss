@@ -395,6 +395,10 @@ header.tech-header {
 			cursor: pointer;
 		}
 
+		.tech-icon.no-repo:hover {
+			cursor: initial;
+		}
+
 		.tech-title {
 			background-color: white;
 			color: #48483E;
