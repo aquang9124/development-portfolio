@@ -116,17 +116,8 @@
 			if (box === vm.currentRepo) {
 				vm.currentRepo = '';
 			}
-			else if (box == 'html5') {
+			else {
 				vm.currentRepo = box;
-				return true;
-			}
-			else if (box == 'css3') {
-				vm.currentRepo = box;
-				return true;
-			}
-			else if (box == 'php') {
-				vm.currentRepo = box;
-				return true;
 			}
 		}
 	}
